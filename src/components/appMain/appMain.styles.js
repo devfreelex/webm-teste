@@ -3,7 +3,8 @@ export default () => {
            app-main {
             display: block;
             float: left;
-            width: 100%;               
+            width: 100%;         
+            background:#f5f5f5      
            }
 
            app-main .main-wrapper {

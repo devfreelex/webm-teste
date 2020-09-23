@@ -4,6 +4,8 @@ import appCarFilter from './components/appCarFilter/appCarFilter.component'
 import { appNotFound } from './components/appNotFound.component'
 
 import './assets/reset.css'
+import './assets/main.css'
+import '../node_modules/line-awesome/dist/line-awesome/css/line-awesome'
 
 
 const routes = {

@@ -4,7 +4,7 @@ export default () => /*css*/`
         float:left;
         width:100%;
         padding:15px;
-        background:#ebebeb;
+        background:#f5f5f5;
     }
 
     app-header h1 {

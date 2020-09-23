@@ -43,6 +43,7 @@
     },
     "dependencies": {
         "@babel/cli": "^7.8.4",
+        "line-awesome": "^1.3.0",
         "mdn-polyfills": "^5.20.0",
         "r9x_js": "^2.0.0",
         "whatwg-fetch": "^3.0.0"
