@@ -3,7 +3,7 @@ export default () => /*css*/`
         display:block;
         float:left;
         width:100%;
-        padding:15px;
+        padding:45px 15px 15px;
         background:#f5f5f5;
     }
 

@@ -18,5 +18,8 @@ export default ({ props, state }) => /*html*/ `
                 </div>        
             </div>
         </div>
+        <div class="btn-sell">
+            <app-sell></app-sell>
+        </div>
     </div>
 `

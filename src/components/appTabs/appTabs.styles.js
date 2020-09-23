@@ -62,5 +62,12 @@ export default () => /*css*/ `
         margin-right:10px;
     }
 
+    app-tabs .btn-sell {
+        display:block;
+        float:right;
+        position:relative;
+        top:20px;
+    }
+
 
 `
