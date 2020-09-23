@@ -14,4 +14,10 @@ export default () => /*css*/ `
         padding:30px;
         background:#fff;
     }
+
+    app-car-filter .check-box {
+        display:block;
+        float:left;
+        padding:15px 7.5px 15px 7.5px
+    }
 `
