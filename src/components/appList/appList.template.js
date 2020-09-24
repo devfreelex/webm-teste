@@ -1,4 +1,4 @@
-export default ({ props, state }) => { console.log(props)
+export default ({ props, state }) => {
 
     const repeat = (dataList, templateFragment) => {
         return dataList.map((dataItem) => {

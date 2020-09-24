@@ -1,7 +1,4 @@
-export default ({ props, state }) => {
-    console.log(props)
-
-    return /*html*/ `
+export default ({ props, state }) =>  /*html*/ `
         <div class="place-wrapper">
             <app-input
                 data-props="{
@@ -15,4 +12,3 @@ export default ({ props, state }) => {
             ></app-list>
         </div>
     `
-}
