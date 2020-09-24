@@ -21,10 +21,19 @@ export default () => /*css*/ `
         padding:15px 7.5px 15px 7.5px
     }
 
-    app-car-filter .select-box {
+    app-car-filter .place-box {
         display:block;
         float:left;
-        width:320px;
-        padding:0 7.5px 15px 7.5px
+        max-width:250px;
+        padding:0 0 15px 7.5px
+    }
+
+    app-car-filter .range-box {
+        display:block;
+        float:left;
+        max-width:130px;
+        padding:0 7.5px 15px 0;
+        position:relative;
+        left:-1px;
     }
 `
