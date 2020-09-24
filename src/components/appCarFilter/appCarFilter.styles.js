@@ -20,4 +20,11 @@ export default () => /*css*/ `
         float:left;
         padding:15px 7.5px 15px 7.5px
     }
+
+    app-car-filter .select-box {
+        display:block;
+        float:left;
+        width:320px;
+        padding:0 7.5px 15px 7.5px
+    }
 `

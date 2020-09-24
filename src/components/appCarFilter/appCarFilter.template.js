@@ -8,5 +8,13 @@ export default ({props, state}) =>/*html*/ `
         <div class="check-box">
             <app-check data-props="{'label':'Usados'}"></app-check>
         </div>
+        <div class="select-box">
+            <app-select 
+                data-props="{
+                    'dataKey':'list', 
+                    'icon':'las la-map-marker-alt',
+                    'label':'Onde'
+                }"></app-select>
+        </div>
     </div>
 `
