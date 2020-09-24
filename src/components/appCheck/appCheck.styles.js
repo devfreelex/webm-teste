@@ -9,12 +9,17 @@ export default () => /*css*/ `
         color:#666
     }
 
+    app-check .btn-check:hover {
+        cursor: pointer
+    }
+
     app-check i {
         color:#666;
         font-size:1.2em;
         position:relative;
         top:1px;
     }
+
 
     app-check .btn-check.checked i {
         color:red
