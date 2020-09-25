@@ -1,3 +1,59 @@
 body {
     font-family: 'Poppins', sans-serif;    
 }
+
+.grid {
+    display:block;
+    float:left;
+    width:100%;
+}
+
+.grid [class^="grid-"] {
+    display:block;
+    float:left;
+    padding:15px;
+}
+
+.grid [class^="grid-"] + [class^="grid-"]{
+    padding:15px;
+}
+
+.grid [class^="grid-"]:first-child {
+    padding:15px 0 15px 0;
+}
+
+.grid [class^="grid-"]:last-child {
+    padding:15px 0 15px 0;
+}
+
+.grid [class^="grid-"]:first-child + [class^="grid-"]:last-child {
+    padding-left:15px;
+}
+
+.grid + .grid [class^="grid-"] {
+    padding-top:0;
+}
+
+.grid .no-gutter {
+    padding:0 !important
+}
+.grid .no-left-gutter {
+    padding-left:0 !important
+}
+.grid .no-right-gutter {
+    padding-right:0 !important
+}
+.grid .no-top-gutter {
+    padding-top:0 !important
+}
+.grid .no-bottom-gutter {
+    padding-bottom:0 !important
+}
+
+
+
+.grid .grid-1 {  width:100%; }
+.grid .grid-2 {  width:50%; }
+.grid .grid-3 {  width:33.333%; }
+.grid .grid-4 {  width:25%; }
+.grid .grid-5 {  width:20%; }

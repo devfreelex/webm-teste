@@ -3,7 +3,7 @@ import template from './appCarFilter.template'
 
 import appCheck from '../appCheck/appCheck.component'
 import appPlace from '../appPlace/appPlace.component'
-import appRange from '../appRange/appRange.component'
+import appSelect from '../appSelect/appSelect.component'
 
 export default () => {
     
@@ -12,7 +12,7 @@ export default () => {
     const children = () => ({
         appCheck,
         appPlace,
-        appRange
+        appSelect
     })
 
     return {

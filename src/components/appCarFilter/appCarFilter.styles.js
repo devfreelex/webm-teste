@@ -11,28 +11,34 @@ export default () => /*css*/ `
         display:block;
         float:left;
         width:100%;
-        padding:30px;
+        padding:15px;
         background:#fff;
     }
-
+    
+    app-car-filter .check-group{
+        display:block;
+        float:left;
+        width:100%;
+    }
     app-car-filter .check-box {
         display:block;
         float:left;
-        padding:15px 7.5px 15px 7.5px
+        padding:0 7.5px 0 7.5px
     }
 
     app-car-filter .place-box {
         display:block;
         float:left;
-        max-width:250px;
-        padding:0 0 15px 7.5px
+        width:calc(100% - 130px);
+        padding:0
     }
 
     app-car-filter .range-box {
         display:block;
         float:left;
+        width:100%;
         max-width:130px;
-        padding:0 7.5px 15px 0;
+        padding:0;
         position:relative;
         left:-1px;
     }

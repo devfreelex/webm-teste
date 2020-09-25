@@ -1,29 +1,86 @@
 export default ({props, state}) =>/*html*/ `
     <div class="filter-wrapper">
-        <h1>Filter Wrapper</h1>
 
-        <div class="check-box">
-            <app-check data-props="{'label':'Novos'}"></app-check>
+        <div class="check-group">
+            <div class="check-box">
+                <app-check data-props="{'label':'Novos'}"></app-check>
+            </div>
+            <div class="check-box">
+                <app-check data-props="{'label':'Usados'}"></app-check>
+            </div>        
         </div>
-        <div class="check-box">
-            <app-check data-props="{'label':'Usados'}"></app-check>
+        <div class="grid">
+            <div class="grid-2">
+                <div class="place-box">
+                    <app-place 
+                        data-props="{
+                            'inputDataKey':'value', 
+                            'inputIcon':'las la-map-marker-alt',
+                            'inputLabel':'Onde',
+                            'listDataKey': 'list'
+                        }"></app-place>
+                </div>
+                <div class="range-box">
+                        <app-select 
+                        data-props="{
+                            'inputDataKey':'value', 
+                            'inputLabel':'Raio',
+                            'listDataKey': 'list'
+                        }"></app-select>
+                </div>
+            </div>
+            <div class="grid-4">
+                    <app-select 
+                        data-props="{
+                            'inputDataKey':'value', 
+                            'inputLabel':'Marca',
+                            'listDataKey': 'list'
+                        }">
+                    </app-select>
+            </div>
+            <div class="grid-4">
+                    <app-select 
+                        data-props="{
+                            'inputDataKey':'value', 
+                            'inputLabel':'Modelo',
+                            'listDataKey': 'list'
+                        }">
+                    </app-select>
+            </div>
         </div>
-        <div class="place-box">
-            <app-place 
-                data-props="{
-                    'inputDataKey':'value', 
-                    'inputIcon':'las la-map-marker-alt',
-                    'inputLabel':'Onde',
-                    'listDataKey': 'list'
-                }"></app-place>
-        </div>
-        <div class="range-box">
-                <app-range 
-                data-props="{
-                    'inputDataKey':'value', 
-                    'inputLabel':'Raio',
-                    'listDataKey': 'list'
-                }"></app-range>
+        <div class="grid">
+            <div class="grid-2 no-gutter">
+                <div class="grid">
+                    <div class="grid-2 no-bottom-gutter">
+                        <app-select 
+                            data-props="{
+                                'inputDataKey':'value', 
+                                'inputLabel':'Ano desejado',
+                                'listDataKey': 'list'
+                            }">
+                        </app-select>
+                    </div>
+                    <div class="grid-2 no-bottom-gutter">
+                        <app-select 
+                            data-props="{
+                                'inputDataKey':'value', 
+                                'inputLabel':'Faixa de preço',
+                                'listDataKey': 'list'
+                            }">
+                        </app-select>
+                    </div>                   
+                </div>         
+            </div>
+
+            <div class="grid-2 no-bottom-gutter">
+                <app-select 
+                    data-props="{
+                        'inputDataKey':'value', 
+                        'inputLabel':'Versão',
+                        'listDataKey': 'list'
+                    }">
+                </app-select>
+            </div>
         </div>
     </div>
 `
