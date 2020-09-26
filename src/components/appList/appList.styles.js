@@ -1,5 +1,10 @@
 export default () => /*css*/ `
 
+    app-list .list-wrapper{
+        position:relative;
+        z-index:100
+    }
+
     app-list .list-wrapper,
     app-select .list,
     app-select .item  {
@@ -12,7 +17,7 @@ export default () => /*css*/ `
         box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);
         border-top:1px #ebebeb solid;
         position:relative;
-        top:7px;
+        top:-1px;
         left:-1px; 
         overflow-x:hidden;
         overflow-y:scroll; 

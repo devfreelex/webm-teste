@@ -17,7 +17,7 @@ export default ({props, state}) =>/*html*/ `
                             'inputDataKey':'value', 
                             'inputIcon':'las la-map-marker-alt',
                             'inputLabel':'Onde',
-                            'listDataKey': 'list'
+                            'listDataKey': 'place'
                         }"></app-place>
                 </div>
                 <div class="range-box">
@@ -25,7 +25,7 @@ export default ({props, state}) =>/*html*/ `
                         data-props="{
                             'inputDataKey':'value', 
                             'inputLabel':'Raio',
-                            'listDataKey': 'list'
+                            'listDataKey': 'range'
                         }"></app-select>
                 </div>
             </div>
@@ -34,7 +34,7 @@ export default ({props, state}) =>/*html*/ `
                         data-props="{
                             'inputDataKey':'value', 
                             'inputLabel':'Marca',
-                            'listDataKey': 'list'
+                            'listDataKey': 'brand'
                         }">
                     </app-select>
             </div>
@@ -43,7 +43,7 @@ export default ({props, state}) =>/*html*/ `
                         data-props="{
                             'inputDataKey':'value', 
                             'inputLabel':'Modelo',
-                            'listDataKey': 'list'
+                            'listDataKey': 'model'
                         }">
                     </app-select>
             </div>
@@ -56,7 +56,7 @@ export default ({props, state}) =>/*html*/ `
                             data-props="{
                                 'inputDataKey':'value', 
                                 'inputLabel':'Ano desejado',
-                                'listDataKey': 'list'
+                                'listDataKey': 'year'
                             }">
                         </app-select>
                     </div>
@@ -65,7 +65,7 @@ export default ({props, state}) =>/*html*/ `
                             data-props="{
                                 'inputDataKey':'value', 
                                 'inputLabel':'Faixa de preço',
-                                'listDataKey': 'list'
+                                'listDataKey': 'priceRange'
                             }">
                         </app-select>
                     </div>                   
@@ -77,7 +77,7 @@ export default ({props, state}) =>/*html*/ `
                     data-props="{
                         'inputDataKey':'value', 
                         'inputLabel':'Versão',
-                        'listDataKey': 'list'
+                        'listDataKey': 'version'
                     }">
                 </app-select>
             </div>

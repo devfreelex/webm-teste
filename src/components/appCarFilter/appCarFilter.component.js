@@ -9,6 +9,10 @@ export default () => {
     
     const tagName = 'app-car-filter'
 
+    const state = {
+        place: { isVisible: false }
+    }
+
     const children = () => ({
         appCheck,
         appPlace,
@@ -17,6 +21,7 @@ export default () => {
 
     return {
         tagName,
+        state,
         template,
         styles,
         children

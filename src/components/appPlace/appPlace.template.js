@@ -1,5 +1,6 @@
 export default ({ props, state }) =>  /*html*/ `
         <div class="place-wrapper">
+            <i class="las la-times-circle clear"></i>
             <app-input
                 data-props="{
                     'dataKey':'${props.object.inputDataKey}',
