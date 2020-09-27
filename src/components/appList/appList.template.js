@@ -6,13 +6,22 @@ export default ({ props, state }) => {
         }).join('')
     }
 
-    const itemListFragment = (item) => /*html*/ `<li class="item" data-id="${item.id}">${item.value}</li>`
+    const itemListFragment = (item) => {
+        return  /*html*/ `
+            <li class="item" 
+            data-id="${item.id}"
+            data-value="${item.value}"
+            >${item.value}</li>
+        `
+    }
 
-    const listFragment = (dataList) => /*html*/ `
-        <ul class="list ${state.isVisible ? 'active' : ''}">
-            ${repeat(dataList, itemListFragment)}
-        </ul>
-    `
+    const listFragment = (dataList) => {
+        return /*html*/ `
+            <ul class="list ${props.object.isVisible === true ? 'active' : ''}">
+                ${repeat(dataList, itemListFragment)}
+            </ul>
+        `
+    }
 
     return /*html*/ `
         <div class="list-wrapper">

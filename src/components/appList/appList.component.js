@@ -8,7 +8,6 @@ export default () => {
 
     const state = {
         isSelected: false,
-        isVisible: false,
         uId: null,
         value: '',
         list: []        
@@ -17,14 +16,18 @@ export default () => {
     const hooks = ({methods}) => ({
         beforeOnInit () {
             methods.setList()
-            methods.onListChange()
         }
     })
 
     const events = ({on, query, queryAll, methods}) => ({
         onClickItem () {
             const itemList = queryAll('.item')
-            on('click', itemList, methods.hideList)
+            on('click', itemList, ({target}) => {
+                if(target.classList.contains('item')){
+                    methods.setValue(target.dataset.value)
+                    methods.setVisibility()
+                }
+            })
         }
     })
 
@@ -33,34 +36,26 @@ export default () => {
         const dataKey = props.listDataKey
         const dataStore = store.get()[dataKey]
 
+        const setVisibility = () => {
+            dataProps.set({object: {isVisible: false}})     
+        }
+
         const setList = () => {
             const list = dataStore.list
-            state.set({ list })
+            const {isVisible} = dataProps.get().object
+            state.set({ list, isVisible })
         }
 
-        const onListChange = () => {
-            store.subscribe((storeState) => {
-                const localIsVisible = state.isVisible
-                const storeIsVisible = storeState[dataKey].isVisible
-                if (localIsVisible !== storeIsVisible) showList()
-            })
-        }
-
-        const showList = () => {
-            state.set({ isVisible: dataStore.isVisible })
-        }
-
-        const hideList = () => {
+        const setValue = (value) => { 
             store.update((dataStore) => {
-                dataStore[dataKey].isVisible = false
+                dataStore[dataKey].value = value
             })           
         }
 
         return {
             setList,
-            onListChange,
-            showList,
-            hideList
+            setVisibility,
+            setValue
         }
     }
 

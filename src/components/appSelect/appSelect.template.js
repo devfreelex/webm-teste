@@ -4,11 +4,14 @@ export default ({props, state}) => {
     <div class="select-wrapper">
             <div class="box">
                 <div class="label">${props.object.inputLabel}:</div>
-                <div class="value">Valor</div>
+                <div class="value">${state.value}</div>
                 <i class="las la-angle-down icon"></i>
             </div>
             <app-list
-                data-props="{'listDataKey':'${props.object.listDataKey}'}"
+                data-props="{
+                    'isVisible':${state.isVisible},
+                    'listDataKey':'${props.object.listDataKey}'
+                }"
             ></app-list>
     </div>
 `

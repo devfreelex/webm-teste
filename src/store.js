@@ -13,6 +13,7 @@ const store = storeFactory({
     },
     range: { 
         isVisible: false,
+        value:'',
         list: [
             { value: '10 km', id: 1 },
             { value: '25 km', id: 2 },

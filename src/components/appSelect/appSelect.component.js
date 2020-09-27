@@ -11,7 +11,8 @@ export default () => {
     const tagName = 'app-select'
 
     const state = {
-        isVisible: false
+        isVisible: false,
+        value:''
     }
 
     const children = () => ({
@@ -22,6 +23,7 @@ export default () => {
     const hooks = ({methods}) => ({
         beforeOnInit () {
             store.subscribe((dataStore) => {
+                methods.updateValue(dataStore)
                 methods.updateVisibility(dataStore)
             })
         }
@@ -39,19 +41,26 @@ export default () => {
         const dataKey = props.listDataKey
 
         const toggleList = () => {
-            store.update((dataStore) => {
-                dataStore[dataKey].isVisible = !state.isVisible
-            })
+            const { isVisible } = state.get()
+            state.set({isVisible: !isVisible})
         }   
 
         const updateVisibility = (dataStore) => {
-            console.log(dataStore[dataKey], state.get().isVisible)
-            state.isVisible = dataStore[dataKey].isVisible
+            const isVisible = dataStore[dataKey].isVisible
+            state.set({isVisible})
+        }
+
+        const updateValue = (dataStore) => {
+            if (state.get().value !== dataStore[dataKey].value && dataStore[dataKey].value !== '') {
+                state.set({ value: dataStore[dataKey].value})
+            }
+
         }
         
         return { 
             toggleList,
-            updateVisibility
+            updateVisibility,
+            updateValue
         }
     }
 
