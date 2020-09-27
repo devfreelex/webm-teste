@@ -3,10 +3,10 @@ export default ({props, state}) =>/*html*/ `
 
         <div class="check-group">
             <div class="check-box">
-                <app-check data-props="{'label':'Novos'}"></app-check>
+                <app-check data-props="{'label':'Novos', 'type':'new'}"></app-check>
             </div>
             <div class="check-box">
-                <app-check data-props="{'label':'Usados'}"></app-check>
+                <app-check data-props="{'label':'Usados', 'type':'worn'}"></app-check>
             </div>        
         </div>
         <div class="grid">
