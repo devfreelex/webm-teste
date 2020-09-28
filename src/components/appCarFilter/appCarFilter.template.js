@@ -87,11 +87,11 @@ export default ({ props, state }) =>/*html*/ `
                 <app-super-filter></app-super-filter>
             </div>
 			<div class="grid-2">
-				<div class="button-box">
+				<div class="clear-box">
 					<app-clear></app-clear>
 				</div>
-				<div class="button-box">
-					
+				<div class="exec-box">
+					<app-exec-filter></app-exec-filter>
 				</div>
 			</div>
         </div>

@@ -35,17 +35,17 @@ export default () => /*css*/ `
     }
 
     app-input input {
-        display:block;
-        float:left;
-        padding:10px 10px 10px 0;
-        position:relative;
-        top:4px;
-        font-weight:600;
-        font-size:1em;
-        color:#666;
-        border:0;
-        outline:0;
-    }    
+        display: block;
+        float: left;
+        padding: 10px 10px 7px 0;
+        position: relative;
+        top: 3px;
+        font-weight: 600;
+        font-size: 1em;
+        color: #666;
+        border: 0;
+        outline: 0;
+    }   
 
     app-input .icon + .label + input {
         width:calc(100% - 90px);        
