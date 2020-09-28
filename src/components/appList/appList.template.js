@@ -1,4 +1,4 @@
-export default ({ props, state }) => {
+export default ({ props, state }) => { 
 
     const repeat = (dataList, templateFragment) => {
         return dataList.map((dataItem) => {
@@ -11,6 +11,8 @@ export default ({ props, state }) => {
             <li class="item" 
             data-id="${item.id}"
             data-value="${item.value}"
+            data-event="${props.object.event}"
+            data-query="${props.object.query}"
             >${item.value}</li>
         `
     }

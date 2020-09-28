@@ -34,7 +34,9 @@ export default ({ props, state }) =>/*html*/ `
                         data-props="{
                             'inputDataKey':'value', 
                             'inputLabel':'Marca',
-                            'listDataKey': 'brand'
+                            'listDataKey': 'brand',
+                            'event':'model',
+                            'query':'MakeID'
                         }">
                     </app-select>
             </div>

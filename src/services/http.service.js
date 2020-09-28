@@ -1,16 +1,27 @@
 const http = () => {
 
+    const host = 'http://desafioonline.webmotors.com.br'
+
     const api = {
-        make: 'GET /api/OnlineChallenge/Make',
-        model: 'GET /api/OnlineChallenge/Model',
-        version: 'GET /api/OnlineChallenge/Version',
-        vehicles: 'GET /api/OnlineChallenge/Vehicles',
+        make: 'api/OnlineChallenge/Make',
+        model: 'api/OnlineChallenge/Model',
+        version: 'api/OnlineChallenge/Version',
+        vehicles: 'api/OnlineChallenge/Vehicles',
     }
 
 
-    const get = async (endPoint) => {
-        const result = await fetch(endPoint)
-        console.log(result)
+    const get = async ({endPoint, query, value}) => {
+        const uri = query && value ?
+            `${host}/${api[endPoint]}?${query}=${value}` :
+            `${host}/${api[endPoint]}`
+
+        const response = await fetch(uri)
+
+        if (response.ok) {
+            return await response.json()
+        }
+
+        throw new Error(`The request failed: ${response.status}`)
     }
 
     return {
