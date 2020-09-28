@@ -4,6 +4,7 @@ import template from './appCarFilter.template'
 import appCheck from '../appCheck/appCheck.component'
 import appPlace from '../appPlace/appPlace.component'
 import appSelect from '../appSelect/appSelect.component'
+import appSuperFilter from '../appSuperFilter/appSuperFilter.component'
 
 export default () => {
     
@@ -16,7 +17,8 @@ export default () => {
     const children = () => ({
         appCheck,
         appPlace,
-        appSelect
+        appSelect,
+        appSuperFilter
     })
 
     return {

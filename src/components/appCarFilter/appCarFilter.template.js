@@ -1,4 +1,4 @@
-export default ({props, state}) =>/*html*/ `
+export default ({ props, state }) =>/*html*/ `
     <div class="filter-wrapper">
 
         <div class="check-group">
@@ -81,6 +81,12 @@ export default ({props, state}) =>/*html*/ `
                     }">
                 </app-select>
             </div>
+        </div>
+        <div class="grid">
+            <div class="grid-2">
+                <app-super-filter></app-super-filter>
+            </div>
+            <div class="grid-2"></div>
         </div>
     </div>
 `
