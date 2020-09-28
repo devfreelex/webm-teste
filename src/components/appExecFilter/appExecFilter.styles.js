@@ -17,7 +17,7 @@ export default () => /*css*/ `
         padding:10px 30px;
         font-size: 1.1em;
         text-transform: uppercase;
-        font-weight:800;
+        font-weight:700;
         color:#fff;
         background:red;
         outline:0;
