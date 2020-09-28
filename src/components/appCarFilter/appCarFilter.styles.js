@@ -22,15 +22,7 @@ export default () => /*css*/ `
     }
     app-car-filter .check-box {
         display:block;
-        float:left;
-        padding:0 7.5px 0 7.5px
-    }
-
-    app-car-filter .place-box {
-        display:block;
-        float:left;
-        width:calc(100% - 130px);
-        padding:0
+        float:left;Busca Avançada
     }
 
     app-car-filter .range-box {
@@ -41,5 +33,15 @@ export default () => /*css*/ `
         padding:0;
         position:relative;
         left:-1px;
+    }
+
+    app-car-filter .button-box {
+        padding:30px 0 0 0;
+        display:block;
+        float:right;
+    }
+
+    app-car-filter .button-box + .button-box {
+        padding-right:15px;
     }
 `

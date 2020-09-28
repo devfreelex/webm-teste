@@ -86,7 +86,14 @@ export default ({ props, state }) =>/*html*/ `
             <div class="grid-2">
                 <app-super-filter></app-super-filter>
             </div>
-            <div class="grid-2"></div>
+			<div class="grid-2">
+				<div class="button-box">
+					<app-clear></app-clear>
+				</div>
+				<div class="button-box">
+					
+				</div>
+			</div>
         </div>
     </div>
 `

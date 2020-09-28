@@ -5,6 +5,7 @@ import appCheck from '../appCheck/appCheck.component'
 import appPlace from '../appPlace/appPlace.component'
 import appSelect from '../appSelect/appSelect.component'
 import appSuperFilter from '../appSuperFilter/appSuperFilter.component'
+import appClear from '../appClear/appClear.component'
 
 export default () => {
     
@@ -18,7 +19,8 @@ export default () => {
         appCheck,
         appPlace,
         appSelect,
-        appSuperFilter
+        appSuperFilter,
+        appClear
     })
 
     return {
