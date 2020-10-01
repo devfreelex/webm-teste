@@ -3,10 +3,13 @@ import template from './appCarFilter.template'
 
 import appCheck from '../appCheck/appCheck.component'
 import appPlace from '../appPlace/appPlace.component'
-import appSelect from '../appSelect/appSelect.component'
 import appSuperFilter from '../appSuperFilter/appSuperFilter.component'
 import appClear from '../appClear/appClear.component'
 import appExecFilter from '../appExecFilter/appExecFilter.component'
+import appSelect from '../appSelect/appSelect.component'
+import appBrand from '../appBrand/appBrand.component'
+import appModel from '../appModel/appModel.component'
+
 import { http } from '../../services/http.service'
 import { store } from '../../store'
 
@@ -21,10 +24,12 @@ export default () => {
     const children = () => ({
         appCheck,
         appPlace,
-        appSelect,
         appSuperFilter,
         appClear,
-        appExecFilter
+        appExecFilter,
+        appSelect,
+        appBrand,
+        appModel
     })
 
     const hooks = ({methods}) => ({

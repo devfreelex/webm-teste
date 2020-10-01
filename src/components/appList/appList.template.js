@@ -11,8 +11,6 @@ export default ({ props, state }) => {
             <li class="item" 
             data-id="${item.id}"
             data-value="${item.value}"
-            data-event="${props.object.event}"
-            data-query="${props.object.query}"
             >${item.value}</li>
         `
     }

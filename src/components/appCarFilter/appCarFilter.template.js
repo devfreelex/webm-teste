@@ -30,24 +30,22 @@ export default ({ props, state }) =>/*html*/ `
                 </div>
             </div>
             <div class="grid-4">
-                    <app-select 
+                    <app-brand 
                         data-props="{
                             'inputDataKey':'value', 
                             'inputLabel':'Marca',
-                            'listDataKey': 'brand',
-                            'event':'model',
-                            'query':'MakeID'
+                            'listDataKey': 'brand'
                         }">
-                    </app-select>
+                    </app-brand>
             </div>
             <div class="grid-4">
-                    <app-select 
+                    <app-model 
                         data-props="{
                             'inputDataKey':'value', 
                             'inputLabel':'Modelo',
                             'listDataKey': 'model'
                         }">
-                    </app-select>
+                    </app-model>
             </div>
         </div>
         <div class="grid">

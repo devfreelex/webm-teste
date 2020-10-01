@@ -1,17 +1,26 @@
 const pubsubFactory = () => {
     const listeners = {}
 
-    const subscribe = (eventName, handler) => { 
-        if((eventName in listeners)) return
-        listeners[eventName] = handler
-        // throw new Error(`This event has already been registered: ${eventName}`)
+    const _isString = (eventName) =>  {
+        typeof eventName && eventName === 'string'
+    }
+    
+    const _isFunction = (handler) => typeof handler === 'function'
+
+    const _isNotRegistered = (eventName) => !listeners.hasOwnProperty(eventName)
+
+    const _isValidEvent = (eventName, handler) => {
+        return _isString(eventName) && _isNotRegistered(eventName) && _isFunction(handler)
     }
 
+    const subscribe = (eventName, handler) => { 
+        if(_isValidEvent(eventName, handler)) listeners[eventName] = handler
+    }
+
+
+
     const emit = (eventName, payload) => {
-        if(!(eventName in listeners) || typeof listeners[eventName] !== 'function') {
-            throw new Error(`This event has not been registered: ${eventName}`)
-        }
-        listeners[eventName](payload)
+        if (_isFunction(listeners[eventName])) listeners[eventName](payload)
     }
 
     return {

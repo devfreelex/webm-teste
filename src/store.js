@@ -1,10 +1,7 @@
 import { storeFactory } from 'r9x_js'
 
 const store = storeFactory({
-    vehicleType:{
-        worn:false,
-        new: false
-    },
+
     place: { 
         isVisible: false,
         list: [
@@ -26,9 +23,11 @@ const store = storeFactory({
             { value: '100 km', id: 5 },
         ]          
     },
-    brand: { 
+    brand: {
+        value:'',
         isVisible: false,
-        list: []          
+        list: [],
+        selected: {id:null, value:''}     
     },
     model: { 
         isVisible: false,
