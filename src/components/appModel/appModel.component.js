@@ -12,7 +12,7 @@ export default () => {
 
     const state = {
         isVisible: false,
-        value:''
+        value: store.get().model.value
     }
 
     const children = () => ({
@@ -40,6 +40,10 @@ export default () => {
         const { object: props } = dataProps.get()
         const dataKey = props.listDataKey
 
+        const _hasChages = (val1, val2) => {
+            return val1 !== val2
+        }      
+
         const toggleList = () => {
             const { isVisible } = state.get()
             state.set({isVisible: !isVisible})
@@ -51,16 +55,16 @@ export default () => {
         }
 
         const updateValue = (dataStore) => {
-            if (state.get().value !== dataStore[dataKey].value && dataStore[dataKey].value !== '') {
-                state.set({ value: dataStore[dataKey].value})
-            }
-
+            const { value: storeValue } = dataStore[dataKey]['selected']
+            const { value: stateValue } = state.get()
+            const stateIsDiferent = _hasChages(stateValue, storeValue)
+            if (stateIsDiferent) state.set({ value: storeValue })
         }
         
         return { 
             toggleList,
             updateVisibility,
-            updateValue
+            updateValue,
         }
     }
 

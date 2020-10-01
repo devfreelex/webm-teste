@@ -14,7 +14,7 @@ import { http } from '../../services/http.service'
 import { store } from '../../store'
 
 export default () => {
-    
+
     const tagName = 'app-car-filter'
 
     const state = {
@@ -32,21 +32,48 @@ export default () => {
         appModel
     })
 
-    const hooks = ({methods}) => ({
-        beforeOnInit () {
+    const hooks = ({ methods }) => ({
+        beforeOnInit() {
             methods.getBrands()
+            store.subscribe(dataStore => {
+                methods.getModels()
+
+            })
         }
     })
 
-    const methods = () => ({
-        async getBrands () {
+    const methods = () => {
+        let lastBrandId = null
+
+        const getBrands = async () => {
             const httpService = http()
-            const reqParams = { endPoint: 'make'}
+            const reqParams = { endPoint: 'make' }
             const data = await httpService.get(reqParams)
             const brandList = data.map(item => ({ id: item.ID, value: item.Name }))
             store.update(dataStore => dataStore.brand.list = brandList)
         }
-    })
+
+        const getModels = async () => {
+            const dataStore = store.get()
+            const { id } = dataStore.brand.selected
+            const hasInvalidQuery = !id || lastBrandId === id
+
+            if (hasInvalidQuery) return
+
+            lastBrandId = id
+            const httpService = http()
+            const reqParams = { endPoint: 'model', query: 'MakeID', value: id }
+            const data = await httpService.get(reqParams)
+            const modelList = data.map(item => ({ id: item.ID, value: item.Name }))
+            store.update(dataStore => dataStore.model.list = modelList)
+
+        }
+
+        return {
+            getBrands,
+            getModels
+        }
+    }
 
     return {
         tagName,

@@ -53,7 +53,6 @@ export default () => {
             state.set({ value })  
             store.update((data) => {
                 data[dataKey]['selected'] = { id, value }
-                console.log(data[dataKey])
             })     
 
         }

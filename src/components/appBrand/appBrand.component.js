@@ -12,7 +12,7 @@ export default () => {
 
     const state = {
         isVisible: false,
-        value:''
+        value: store.get().brand.value
     }
 
     const children = () => ({
@@ -34,8 +34,6 @@ export default () => {
             const btnList = query('.icon')
             on('click', [btnList], (e) => {
                 methods.toggleList()
-                // methods.setValue({})
-                // console.log(e.dataset)
             })
         }
     })
@@ -43,6 +41,10 @@ export default () => {
     const methods = ({props:dataProps, state}) => {
         const { object: props } = dataProps.get()
         const dataKey = props.listDataKey
+
+        const _hasChages = (val1, val2) => {
+            return val1 !== val2
+        }
 
         const toggleList = () => {
             const { isVisible } = state.get()
@@ -54,23 +56,17 @@ export default () => {
             state.set({isVisible})
         }
 
-        const setValue = ({dataset}) => {
-            const { id, value } = dataset
-            console.log(dataset)
-        }
-
-        const updateValue = (dataStore) => {
+        const updateValue = (dataStore) => { 
             const {value: storeValue } = dataStore[dataKey]['selected']
             const {value: stateValue } = state.get()
-            if(storeValue === stateValue) return
-            state.set({ value: storeValue })
+            const stateIsDiferent = _hasChages(stateValue, storeValue)
+            if (stateIsDiferent) state.set({ value: storeValue })
         }
         
         return { 
             toggleList,
             updateVisibility,
             updateValue,
-            setValue
         }
     }
 

@@ -30,8 +30,10 @@ const store = storeFactory({
         selected: {id:null, value:''}     
     },
     model: { 
+        value:'',
         isVisible: false,
-        list: []          
+        list: [],
+        selected: { id: null, value: '' }         
     },
     year: { 
         isVisible: false,
