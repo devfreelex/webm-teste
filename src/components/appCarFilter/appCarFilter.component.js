@@ -35,7 +35,7 @@ export default () => {
         appModel,
         appYear,
         appPriceRange,
-        appVersion
+        appVersion,
     })
 
     const hooks = ({ methods }) => ({
@@ -87,7 +87,6 @@ export default () => {
             const httpService = http()
             const reqParams = { endPoint: 'version', query: 'ModelID', value: id }
             const data = await httpService.get(reqParams)
-            console.log(data)
             const version = data.map(item => ({ id: item.ID, value: item.Name }))
             store.update(dataStore => dataStore.version.list = version)
         }        
