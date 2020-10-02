@@ -9,6 +9,9 @@ import appExecFilter from '../appExecFilter/appExecFilter.component'
 import appSelect from '../appSelect/appSelect.component'
 import appBrand from '../appBrand/appBrand.component'
 import appModel from '../appModel/appModel.component'
+import appYear from '../appYear/appYear.component'
+import appPriceRange from '../appPriceRange/appPriceRange.component'
+import appVersion from '../appVersion/appVersion.component'
 
 import { http } from '../../services/http.service'
 import { store } from '../../store'
@@ -29,7 +32,10 @@ export default () => {
         appExecFilter,
         appSelect,
         appBrand,
-        appModel
+        appModel,
+        appYear,
+        appPriceRange,
+        appVersion
     })
 
     const hooks = ({ methods }) => ({

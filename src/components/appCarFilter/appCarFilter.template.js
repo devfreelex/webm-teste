@@ -52,34 +52,34 @@ export default ({ props, state }) =>/*html*/ `
             <div class="grid-2 no-gutter">
                 <div class="grid">
                     <div class="grid-2 no-bottom-gutter">
-                        <app-select 
+                        <app-year 
                             data-props="{
                                 'inputDataKey':'value', 
                                 'inputLabel':'Ano desejado',
                                 'listDataKey': 'year'
                             }">
-                        </app-select>
+                        </app-year>
                     </div>
                     <div class="grid-2 no-bottom-gutter">
-                        <app-select 
+                        <app-range-price 
                             data-props="{
                                 'inputDataKey':'value', 
                                 'inputLabel':'Faixa de preço',
                                 'listDataKey': 'priceRange'
                             }">
-                        </app-select>
+                        </app-range-price>
                     </div>                   
                 </div>         
             </div>
 
             <div class="grid-2 no-bottom-gutter">
-                <app-select 
+                <app-version 
                     data-props="{
                         'inputDataKey':'value', 
                         'inputLabel':'Versão',
                         'listDataKey': 'version'
                     }">
-                </app-select>
+                </app-version>
             </div>
         </div>
         <div class="grid">
