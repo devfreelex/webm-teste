@@ -68,7 +68,7 @@ export default () => {
 
         const _hasMatch = (vehicle, filter) => {
             const vehicleKeys = _getKeys(vehicle)
-            return vehicleKeys.every( vKey => {
+            return vehicleKeys.some( vKey => {
                 const filterKey = _getFilterKey(vKey)
                 const filterValue = filter[filterKey]?.value
                 const vehicleValue =  vehicle[vKey] 
