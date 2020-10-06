@@ -24,13 +24,20 @@ export default () => {
     })
 
     const methods = ({ props, state }) => {
+
+        const _hasChanges = (oldValue, newValue) => oldValue !== newValue
+
+        const _hasFilteredVehicles = (vehicles) => vehicles.length
+
         const showVehicles = (dataStore) => {
-            
-            if (dataStore.vehicle.filtered.length) {
+            const vehiclesInStore = JSON.stringify(dataStore.vehicle.filtered)
+            const vehiclesInState = JSON.stringify(state.get().vehicles)
+            const stateIsDiferent = _hasChanges(vehiclesInState, vehiclesInStore)
+            const hasFilteredVehicles = _hasFilteredVehicles(dataStore.vehicle.filtered)
+            if (stateIsDiferent && hasFilteredVehicles) {
                 return state.set({ vehicles: dataStore.vehicle.filtered })
             }
 
-            state.set({ vehicles: []})            
         }
 
         return {
