@@ -42,19 +42,7 @@ export default () => {
 
         const _hasChages = (val1, val2) => {
             return val1 !== val2
-        }      
-
-
-        const _filterVehicles = (dataStore, year) => {
-            
-            const vehicles = dataStore.vehicle.filtered
-            const result = vehicles.filter( vehicle => {
-                if (parseInt(vehicle.YearFab) === parseInt(year)) return vehicle
-            })
-            
-            store.update( dataStore => dataStore.vehicle.filtered = result)
-
-        }         
+        }            
 
         const toggleList = () => {
             const { isVisible } = state.get()
@@ -70,10 +58,7 @@ export default () => {
             const storeValue = dataStore.year.selected.value
             const stateValue = state.get().value
             const stateIsDiferent = _hasChages(+storeValue, +stateValue)
-            if (stateIsDiferent) {
-                state.set({value: storeValue})
-                _filterVehicles(dataStore, storeValue)
-            }
+            if (stateIsDiferent) state.set({ value: storeValue })
 
         }
         
