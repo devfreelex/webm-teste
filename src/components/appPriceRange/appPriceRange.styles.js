@@ -31,7 +31,8 @@ export default () => /*css*/ `
     }
 
     app-range-price .value {
-        padding:15px 15px 15px 0
+        padding:15px 15px 15px 0;
+        font-weight:bold;
     }
 
     app-range-price .icon {

@@ -31,7 +31,8 @@ export default () => /*css*/ `
     }
 
     app-select .value {
-        padding:15px 15px 15px 0
+        padding:15px 15px 15px 0;
+        font-weight:bold
     }
 
     app-select .icon {
