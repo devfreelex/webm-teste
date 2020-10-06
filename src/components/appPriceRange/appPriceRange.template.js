@@ -10,7 +10,7 @@ export default ({props, state}) => {
             <app-list
                 data-props="{
                     'isVisible':${state.isVisible},
-                    'listDataKey':'${props.object.listDataKey}'
+                    'listDataKey':'priceRange'
                 }"
             ></app-list>
     </div>

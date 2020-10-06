@@ -42,7 +42,18 @@ export default () => {
 
         const _hasChages = (val1, val2) => {
             return val1 !== val2
-        }      
+        }    
+        
+
+        const _filterVehicles = (dataStore, model) => {
+
+            const vehicles = dataStore.vehicle.filtered.filter(vehicle => {
+                if (vehicle.Model === model) return vehicle
+            })
+
+            if(vehicles.length) store.update((dataStore) => dataStore.vehicle.filtered = vehicles)
+
+        }        
 
         const toggleList = () => {
             const { isVisible } = state.get()
@@ -58,7 +69,10 @@ export default () => {
             const { value: storeValue } = dataStore[dataKey]['selected']
             const { value: stateValue } = state.get()
             const stateIsDiferent = _hasChages(stateValue, storeValue)
-            if (stateIsDiferent) state.set({ value: storeValue })
+            if (stateIsDiferent) {
+                state.set({ value: storeValue })
+                _filterVehicles(dataStore, storeValue)
+            }
         }
         
         return { 

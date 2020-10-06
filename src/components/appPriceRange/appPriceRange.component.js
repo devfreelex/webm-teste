@@ -8,11 +8,11 @@ import { store } from '../../store'
 
 export default () => {
 
-    const tagName = 'app-year'
+    const tagName = 'app-range-price'
 
     const state = {
         isVisible: false,
-        value: store.get().model.value
+        value:''
     }
 
     const children = () => ({
@@ -44,21 +44,37 @@ export default () => {
             return val1 !== val2
         }      
 
+        const _filterVehicles = (dataStore, price) => {
+
+            const vehicles = dataStore.vehicle.filtered
+            const result = vehicles.filter(vehicle => {
+                if (+vehicle.Price <= +price) {
+                    return vehicle
+                }
+            })
+            store.update(dataStore => dataStore.vehicle.filtered = result)
+
+        }          
+
         const toggleList = () => {
             const { isVisible } = state.get()
             state.set({isVisible: !isVisible})
         }   
 
-        const updateVisibility = (dataStore) => {
-            const isVisible = dataStore[dataKey].isVisible
+        const updateVisibility = (dataStore) => { 
+            const isVisible = dataStore.priceRange.isVisible
             state.set({isVisible})
         }
 
         const updateValue = (dataStore) => {
-            const { value: storeValue } = dataStore[dataKey]['selected']
-            const { value: stateValue } = state.get()
-            const stateIsDiferent = _hasChages(stateValue, storeValue)
-            if (stateIsDiferent) state.set({ value: storeValue })
+            const storeValue = dataStore.priceRange.selected.value
+            const stateValue = state.get().value
+            const stateIsDiferent = _hasChages(+storeValue, +stateValue)
+            if (stateIsDiferent) {
+                state.set({ value: storeValue })
+                console.log(storeValue)
+                _filterVehicles(dataStore, storeValue)
+            }
         }
         
         return { 

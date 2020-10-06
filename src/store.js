@@ -2,7 +2,8 @@ import { storeFactory } from 'r9x_js'
 
 const store = storeFactory({
     vehicle:{
-        list:[]
+        list:[],
+        filtered: []
     },
     place: { 
         isVisible: false,
