@@ -6,12 +6,6 @@ export default () => {
 
     const tagName = 'app-clear'
 
-    const hooks = () => ({
-        beforeOnInit () {
-            store.subscribe((dataStore) => console.log(dataStore))
-        }
-    })
-
     const events = ({ on, query, methods }) => ({
         onClickToClear() {
             const btnClear = query('#clear')
@@ -32,7 +26,6 @@ export default () => {
         template,
         styles,
         events,
-        methods,
-        hooks
+        methods
     }
 }
