@@ -22,7 +22,7 @@ export default () => {
 
     const hooks = ({methods}) => ({
         beforeOnInit () {
-            store.subscribe((dataStore) => {
+            store.subscribe((dataStore) => { console.log(dataStore)
                 methods.updateValue(dataStore)
                 methods.updateVisibility(dataStore)
             })

@@ -8,6 +8,12 @@ export default () => /*css*/ `
 
     app-clear .clear-label {
         font-size: .875em;
-        color:#666
+        color:#666;
+        cursor:pointer
     }
+
+    app-clear .clear-label:hover {
+        text-decoration: underline
+    }
+    
 `

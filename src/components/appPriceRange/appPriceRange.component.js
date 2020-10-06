@@ -72,7 +72,6 @@ export default () => {
             const stateIsDiferent = _hasChages(+storeValue, +stateValue)
             if (stateIsDiferent) {
                 state.set({ value: storeValue })
-                console.log(storeValue)
                 _filterVehicles(dataStore, storeValue)
             }
         }
