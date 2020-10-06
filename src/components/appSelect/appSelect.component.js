@@ -40,21 +40,24 @@ export default () => {
         const { object: props } = dataProps.get()
         const dataKey = props.listDataKey
 
+        const _hasChages = (val1, val2) => {
+            return val1 !== val2
+        }           
+
         const toggleList = () => {
             const { isVisible } = state.get()
             state.set({isVisible: !isVisible})
         }   
 
         const updateVisibility = (dataStore) => {
-            const isVisible = dataStore[dataKey].isVisible
+            const isVisible = dataStore[dataKey]?.isVisible
             state.set({isVisible})
         }
-
         const updateValue = (dataStore) => {
-            if (state.get().value !== dataStore[dataKey].value && dataStore[dataKey].value !== '') {
-                state.set({ value: dataStore[dataKey].value})
-            }
-
+            const storeValue = dataStore.range?.selected?.value
+            const stateValue = state.get()?.value
+            const stateIsDiferent = _hasChages(+storeValue, +stateValue)
+            if (stateIsDiferent) state.set({ value: storeValue })
         }
         
         return { 
