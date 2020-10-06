@@ -50,6 +50,10 @@ export default () => {
             return _getResult(resultByVersionFilter, vehicles)
         }
 
+        const _setFilteredVehicles = (vehicles) => {
+            store.update(dataStore => dataStore.vehicle.filtered = vehicles)
+        }
+
         const execFilter = () => {
             const storeData = store.get()
             const brandFilterResult = _filterByBrand(storeData.vehicle.list)
@@ -57,7 +61,7 @@ export default () => {
             const yearFilterResult = _filterByYear(modelFilterResult)
             const priceFilterResult = _filterByPrice(yearFilterResult)
             const versionFilterResult = _filterByVersion(priceFilterResult)
-            console.log(versionFilterResult)
+            _setFilteredVehicles(versionFilterResult)
         }
 
         return {
